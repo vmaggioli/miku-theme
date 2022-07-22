@@ -19,7 +19,8 @@ end
 # TODO Add branch/arrow symbol for branch/detached head
 function prompt_git -d "Gets current git branch"
   if command git rev-parse --is-inside-work-tree > /dev/null 2>&1
-    set -l branch (command git show-ref --head -s --abbrev | head -n1 2> /dev/null)
+    #set -l branch (command git show-ref --head -s --abbrev | head -n1 2> /dev/null)
+    set -l branch (command git branch --show-current | head -n1 2> /dev/null)
     prompt_segment fff500 $branch
   end
 end
@@ -38,10 +39,10 @@ end
 # ============================
 
 function fish_prompt
-  prompt_segment normal '\U0001F3B5'
+  echo -n -s '\U0001F3B5 '
   prompt_path
   add_divider
   prompt_git
-  prompt_segment normal "
-  '\U0001F3A4' "
+  echo -n -s "
+  \U0001F3A4 "
 end
