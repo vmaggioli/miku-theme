@@ -31,7 +31,9 @@ function prompt_path -d "Gets current path"
 end
 
 function prompt_user -d "Prompts current user and machine"
-  # TODO
+  set -l user (command whoami)
+  set -l result (command string join "@" $user $hostname)
+  prompt_segment 00a8e6 $result
 end
 
 # ============================
@@ -40,6 +42,8 @@ end
 
 function fish_prompt
   prompt_segment normal "\U0001F3B5 "
+  prompt_user
+  add_divider
   prompt_path
   add_divider
   prompt_git
