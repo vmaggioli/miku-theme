@@ -12,7 +12,7 @@ end
 
 function prompt_segment -d "Draws a segment for the prompt"
   set_color --bold $argv[1]
-  echo -n -s $argv[2]
+  printf $argv[2]
   set_color normal
 end
 
@@ -39,10 +39,10 @@ end
 # ============================
 
 function fish_prompt
-  echo -n -s '\U0001F3B5 '
+  prompt_segment normal "\U0001F3B5 "
   prompt_path
   add_divider
   prompt_git
-  echo -n -s "
+  prompt_segment normal "
   \U0001F3A4 "
 end
