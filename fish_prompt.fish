@@ -12,7 +12,7 @@ end
 
 function prompt_segment -d "Draws a segment for the prompt"
   set_color --bold $argv[1]
-  echo -n -s argv[2]
+  echo -n -s $argv[2]
   set_color normal
 end
 
