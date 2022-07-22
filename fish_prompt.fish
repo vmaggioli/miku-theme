@@ -38,10 +38,10 @@ end
 # ============================
 
 function fish_prompt
-  prompt_segment "\U1F3B5"
+  prompt_segment normal "\U1F3B5"
   add_divider
   prompt_path
   add_divider
   prompt_git
-  prompt_segment "\n  \U1F3A4"
+  prompt_segment normal "\n  \U1F3A4"
 end
