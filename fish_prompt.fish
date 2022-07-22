@@ -32,7 +32,7 @@ end
 
 function prompt_user -d "Prompts current user and machine"
   set -l user (command whoami)
-  set -l result (string join -q "@" $user $hostname)
+  set -l result (string join "@" $user $hostname)
   prompt_segment 00a8e6 $result
 end
 
